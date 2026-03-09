@@ -1,8 +1,7 @@
-/* 1. Thiết lập chung */
 :root {
     --text-main: #1f2328;
     --text-muted: #656d76;
-    --link-color: #0969da; /* Màu xanh GitHub đặc trưng */
+    --link-color: #0969da;
     --bg-color: #ffffff;
 }
 
@@ -19,7 +18,6 @@ body {
     line-height: 1.5;
 }
 
-/* 2. Header trên cùng */
 .top-header {
     padding: 30px 50px 10px 50px;
 }
@@ -32,16 +30,14 @@ body {
     color: var(--text-muted);
 }
 
-/* 3. Bố cục chính */
 .main-container {
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
-    gap: 80px; /* Tạo khoảng trống lớn giữa 2 cột */
+    gap: 80px;
     padding: 40px 50px;
 }
 
-/* 4. Cột trái (Sidebar) */
 .sidebar {
     width: 260px;
     flex-shrink: 0;
@@ -100,7 +96,6 @@ body {
     text-decoration: underline;
 }
 
-/* 5. Cột phải (Nội dung) */
 .content-feed {
     flex: 1;
 }
@@ -160,7 +155,6 @@ body {
     font-weight: 500;
 }
 
-/* 6. Responsive cho Mobile */
 @media (max-width: 850px) {
     .main-container {
         flex-direction: column;
