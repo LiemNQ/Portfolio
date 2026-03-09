@@ -1,9 +1,15 @@
+/* 1. Cấu hình chung và màu sắc */
 :root {
     --bg-color: #f8fafc;
     --sidebar-color: #ffffff;
-    --primary-color: #2563eb;
+    --primary-color: #007bff; /* Màu xanh giống ảnh mẫu */
     --text-main: #1e293b;
     --text-muted: #64748b;
+    --border-color: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -12,103 +18,148 @@ body {
     color: var(--text-main);
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
+/* 2. Bố cục chính chia 2 cột */
 .main-wrapper {
-    display: flex;
-    max-width: 1100px;
+    display: flex; /* Kích hoạt chia cột */
+    max-width: 1200px;
     margin: 0 auto;
     min-height: 100vh;
 }
 
-/* Sidebar bên trái */
+/* 3. Cột bên trái (Sidebar) */
 .sidebar {
-    width: 320px;
+    width: 350px; /* Độ rộng cố định cho cột trái */
     background-color: var(--sidebar-color);
     padding: 60px 40px;
-    border-right: 1px solid #e2e8f0;
+    border-right: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     height: 100vh;
 }
 
+.profile-card {
+    text-align: left;
+}
+
+/* Icon hoặc Avatar */
 .avatar {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     background: #e2e8f0;
-    border-radius: 20px;
+    border-radius: 25%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-h1 { font-size: 1.5rem; margin-bottom: 8px; }
-.tagline { font-weight: 600; font-size: 0.9rem; color: #475569; margin-bottom: 12px; }
-.bio { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 30px; }
+.sidebar h1 {
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+}
 
-.contact-links { font-size: 0.85rem; color: var(--text-main); }
-.link-item { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
-.link-item a { color: inherit; text-decoration: none; }
+.tagline {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    margin-bottom: 15px;
+}
 
-/* Nội dung bên phải */
+.bio {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+}
+
+/* Danh sách liên kết */
+.contact-links {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-muted);
+}
+
+.link-item i {
+    width: 20px;
+    color: var(--text-main);
+}
+
+.link-item a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.link-item a:hover {
+    color: var(--primary-color);
+}
+
+/* 4. Cột bên phải (Content) */
 .content {
-    flex: 1;
+    flex: 1; /* Tự động chiếm phần còn lại */
     padding: 60px 50px;
 }
 
 .section-title {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     color: var(--text-muted);
     margin-bottom: 40px;
+    font-weight: 600;
 }
 
+/* Các bài đăng dự án */
 .post-card {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .post-meta {
     font-size: 0.8rem;
     color: var(--text-muted);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.post-card h3 {
+    margin: 0 0 12px 0;
 }
 
 .post-card h3 a {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: var(--primary-color);
-    text-decoration: none;
+    text-decoration: underline;
 }
-
-.post-card h3 a:hover { text-decoration: underline; }
 
 .post-card p {
     color: #475569;
-    margin-top: 10px;
-    line-height: 1.6;
+    font-size: 1rem;
 }
 
-.tech-stack {
-    margin-top: 15px;
-    display: flex;
-    gap: 10px;
-}
-
-.tech-stack span {
-    font-size: 0.75rem;
-    background: #eff6ff;
-    color: var(--primary-color);
-    padding: 4px 10px;
-    border-radius: 15px;
-    font-weight: 600;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .main-wrapper { flex-direction: column; }
-    .sidebar { width: 100%; height: auto; position: static; padding: 40px 20px; border-right: none; border-bottom: 1px solid #e2e8f0; }
-    .content { padding: 40px 20px; }
+/* 5. Tối ưu cho di động (Responsive) */
+@media (max-width: 850px) {
+    .main-wrapper {
+        flex-direction: column; /* Chuyển về 1 cột trên điện thoại */
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 40px 20px;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .content {
+        padding: 40px 20px;
+    }
 }
