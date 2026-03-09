@@ -1,8 +1,9 @@
+/* 1. Thiết lập chung */
 :root {
-    --link-blue: #0056b3;
-    --text-dark: #1e1e1e;
-    --text-grey: #6a737d;
-    --bg-light: #ffffff;
+    --text-main: #1f2328;
+    --text-muted: #656d76;
+    --link-color: #0969da; /* Màu xanh GitHub đặc trưng */
+    --bg-color: #ffffff;
 }
 
 * {
@@ -13,140 +14,160 @@
 
 body {
     font-family: 'Inter', -apple-system, system-ui, sans-serif;
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
 }
 
-/* Header trên cùng */
-.top-nav {
-    padding: 20px 40px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-grey);
+/* 2. Header trên cùng */
+.top-header {
+    padding: 30px 50px 10px 50px;
 }
 
-.inner-nav {
+.header-inner {
     max-width: 1000px;
     margin: 0 auto;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
 }
 
-/* Layout chính */
-.container {
+/* 3. Bố cục chính */
+.main-container {
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 0 auto;
     display: flex;
-    gap: 100px; /* Khoảng cách rộng giữa 2 cột như trong ảnh */
-    padding: 0 40px;
+    gap: 80px; /* Tạo khoảng trống lớn giữa 2 cột */
+    padding: 40px 50px;
 }
 
-/* Sidebar */
-.profile-sidebar {
+/* 4. Cột trái (Sidebar) */
+.sidebar {
     width: 260px;
     flex-shrink: 0;
 }
 
-.avatar-icon {
-    width: 65px;
-    height: 65px;
-    background-color: #e1f0ff;
-    color: #3182ce;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.user-name {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.user-tagline {
-    font-size: 0.9rem;
-    color: var(--text-grey);
+.profile-pic {
+    width: 80px;
+    height: 80px;
     margin-bottom: 25px;
 }
 
-.info-links {
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.tagline {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+}
+
+.contact-list {
     list-style: none;
 }
 
-.info-links li {
-    font-size: 0.85rem;
-    margin-bottom: 10px;
+.contact-list li {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
 }
 
-.info-links i {
-    width: 14px;
-    color: var(--text-grey);
+.contact-list i {
+    width: 16px;
+    color: var(--text-muted);
+    text-align: center;
 }
 
-.info-links a {
-    color: var(--text-dark);
+.contact-list a {
+    color: var(--text-main);
     text-decoration: none;
 }
 
-.info-links a:hover {
+.contact-list a:hover {
+    color: var(--link-color);
     text-decoration: underline;
 }
 
-/* Content */
-.main-feed {
+/* 5. Cột phải (Nội dung) */
+.content-feed {
     flex: 1;
 }
 
-.feed-label {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text-grey);
-    margin-bottom: 40px;
+.feed-title {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 50px;
 }
 
-.post {
-    margin-bottom: 40px;
+.project-card {
+    margin-bottom: 50px;
 }
 
-.post-title {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
+.project-name {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
 }
 
-.post-title a {
-    color: var(--link-blue);
+.project-name a {
+    color: var(--link-color);
     text-decoration: none;
     font-weight: 700;
-    border-bottom: 2px solid transparent;
 }
 
-.post-title a:hover {
-    border-bottom: 2px solid var(--link-blue); /* Hiệu ứng gạch chân khi hover */
+.project-name a:hover {
+    text-decoration: underline;
 }
 
-.post-meta {
-    font-size: 0.8rem;
-    color: var(--text-grey);
-    margin-bottom: 12px;
+.project-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
     gap: 6px;
 }
 
-.post-description {
-    font-size: 0.95rem;
-    color: var(--text-dark);
+.project-summary {
+    font-size: 1rem;
+    color: var(--text-main);
+    margin-bottom: 15px;
 }
 
-/* Mobile Responsive */
-@media (max-width: 800px) {
-    .container {
+.tags {
+    display: flex;
+    gap: 10px;
+}
+
+.tags span {
+    font-size: 0.75rem;
+    background-color: #f1f5f9;
+    padding: 3px 8px;
+    border-radius: 5px;
+    color: #475569;
+    font-weight: 500;
+}
+
+/* 6. Responsive cho Mobile */
+@media (max-width: 850px) {
+    .main-container {
         flex-direction: column;
-        gap: 50px;
+        padding: 20px;
+        gap: 40px;
+    }
+    .sidebar {
+        width: 100%;
     }
 }
