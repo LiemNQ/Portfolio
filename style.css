@@ -108,7 +108,7 @@ body {
 }
 
 .project-card {
-    margin-bottom: 50px;
+    margin-bottom: 60px; /* Tăng khoảng cách giữa các dự án */
 }
 
 .project-name {
