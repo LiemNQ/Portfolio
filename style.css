@@ -1,10 +1,10 @@
-/* 1. Cấu hình màu sắc và Font chữ */
+/* 1. Định nghĩa màu sắc và Font chữ */
 :root {
     --bg-color: #f8fafc;
     --sidebar-bg: #ffffff;
-    --primary-color: #2563eb; /* Màu xanh cho tiêu đề dự án */
-    --text-main: #1e293b;    /* Màu chữ chính (Đen xám) */
-    --text-muted: #64748b;   /* Màu chữ phụ (Xám) */
+    --primary-color: #2563eb;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
     --border-color: #e2e8f0;
 }
 
@@ -21,17 +21,17 @@ body {
     line-height: 1.6;
 }
 
-/* 2. Bố cục chính chia 2 cột */
+/* 2. Lệnh quan trọng nhất để chia 2 cột */
 .main-wrapper {
-    display: flex; /* Kích hoạt chia cột */
+    display: flex; /* Kích hoạt bố cục Flexbox */
     max-width: 1200px;
     margin: 0 auto;
     min-height: 100vh;
 }
 
-/* 3. Cột bên trái (Sidebar) */
+/* 3. Cấu hình Cột trái (Sidebar) */
 .sidebar {
-    width: 320px;
+    width: 320px; /* Độ rộng cố định giống ảnh mẫu */
     background-color: var(--sidebar-bg);
     padding: 60px 40px;
     border-right: 1px solid var(--border-color);
@@ -72,10 +72,9 @@ body {
     margin-bottom: 40px;
 }
 
-/* 4. Định dạng các dòng thông tin (Dạng chữ thuần) */
+/* 4. Định dạng các dòng thông tin (Email, Resume, GitHub) */
 .contact-links {
     font-size: 0.9rem;
-    color: var(--text-main); /* Đảm bảo chữ hiện màu đen xám, không phải xanh link */
 }
 
 .link-item {
@@ -91,21 +90,26 @@ body {
     font-size: 1rem;
 }
 
-/* Nếu bạn vẫn dùng thẻ <a> cho GitHub/Resume thì định dạng ở đây */
+/* Hiển thị email dạng chữ thuần theo ý Liêm */
+.link-item span {
+    color: var(--text-main);
+}
+
+/* Định dạng cho Resume và GitHub vẫn có thể nhấn */
 .link-item a {
-    color: inherit; /* Lấy màu từ cha (màu đen xám) */
-    text-decoration: none; /* Bỏ gạch chân */
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
 }
 
 .link-item a:hover {
-    color: var(--primary-color);
     text-decoration: underline;
 }
 
-/* 5. Cột nội dung bên phải */
+/* 5. Cấu hình Cột phải (Nội dung chính) */
 .content {
-    flex: 1;
-    padding: 60px 60px;
+    flex: 1; /* Tự động chiếm hết phần không gian còn lại */
+    padding: 60 :rootpx 60px;
 }
 
 .section-title {
@@ -117,6 +121,7 @@ body {
     font-weight: 600;
 }
 
+/* Các khung dự án */
 .post-card {
     margin-bottom: 60px;
 }
@@ -138,6 +143,7 @@ body {
     text-decoration: underline;
 }
 
+/* Tags kỹ năng cho SSB 1.0 và Java CRUD */
 .tech-stack {
     display: flex;
     gap: 10px;
@@ -153,7 +159,7 @@ body {
     color: #475569;
 }
 
-/* 6. Tối ưu cho di động */
+/* 6. Tự động chuyển về 1 cột trên điện thoại */
 @media (max-width: 850px) {
     .main-wrapper {
         flex-direction: column;
