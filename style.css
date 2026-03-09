@@ -1,7 +1,7 @@
 /* 1. Định nghĩa màu sắc và Font chữ */
 :root {
     --bg-color: #f8fafc;
-    --sidebar-bg: #ffffff;
+    --sidebar-bg: #ffffff; 
     --primary-color: #2563eb;
     --text-main: #1e293b;
     --text-muted: #64748b;
