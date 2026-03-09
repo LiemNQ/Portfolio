@@ -9,39 +9,56 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="top-nav">
-        <div class="inner-nav">Portfolio</div>
+    <header class="top-header">
+        <div class="header-inner">Portfolio</div>
     </header>
 
-    <div class="container">
-        <aside class="profile-sidebar">
-            <div class="avatar-icon">
-                <i class="fa-solid fa-laptop-code"></i>
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="profile-pic">
+                <img src="pic.jpg" alt="Ngô Quang Liêm">
             </div>
-            <h1 class="user-name">Ngô Quang Liêm</h1>
-            <p class="user-tagline">Software Engineering student. Focusing on Android apps and smart systems.</p>
             
-            <ul class="info-links">
-                <li><i class="fa-solid fa-location-dot"></i> Hồ Chí Minh, Việt Nam</li>
-                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:liemqn6905@gmail.com">Email</a></li>
-                <li><i class="Resume.pdf"></i> <a href="#">Resume</a></li>
-                <li><i class="fa-brands fa-github"></i> <a href="https://github.com/LiemNQ">GitHub</a></li>
+            <h1 class="name">Ngô Quang Liêm</h1>
+            <p class="tagline">Software Engineering student. Focusing on Android apps and smart management systems.</p>
+            
+            <ul class="contact-list">
+                <li>
+                    <i class="fa-solid fa-location-dot"></i> 
+                    <span>Hồ Chí Minh, Việt Nam</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-envelope"></i> 
+                    <span>liemqn6905@gmail.com</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-file-lines"></i> 
+                    <a href="Resume.pdf" target="_blank">Resume</a>
+                </li>
+                <li>
+                    <i class="fa-brands fa-github"></i> 
+                    <a href="https://github.com/LiemNQ" target="_blank">GitHub</a>
+                </li>
             </ul>
         </aside>
 
-        <main class="main-feed">
-            <h2 class="feed-label">Recent posts</h2>
+        <main class="content-feed">
+            <h2 class="feed-title">Recent posts</h2>
             
-            <article class="post">
-                <h3 class="post-title">
+            <article class="project-card">
+                <h3 class="project-name">
                     <a href="#">Smart School Bus Tracking - SSB 1.0</a>
                 </h3>
-                <div class="post-meta">
+                <div class="project-meta">
                     <i class="fa-regular fa-clock"></i> less than 1 minute read
                 </div>
-                <p class="post-description">
-                    Hệ thống theo dõi xe buýt thông minh, tích hợp quản lý lộ trình và đảm bảo an toàn cho học sinh. Cung cấp API RESTful để xử lý vị trí xe và thông tin tuyến đường.
+                <p class="project-summary">
+                    Hệ thống theo dõi xe buýt thông minh, tích hợp quản lý lộ trình và đảm bảo an toàn cho học sinh.
+                    Cung cấp API RESTful để xử lý vị trí xe và thông tin tuyến đường.
                 </p>
+                <div class="tags">
+                    <span>#Java</span> <span>#Android</span> <span>#SoftwareEngineering</span>
+                </div>
             </article>
         </main>
     </div>
