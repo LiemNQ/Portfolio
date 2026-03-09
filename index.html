@@ -3,30 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Liêm (Software Engineer)</title>
+    <title>Portfolio - Liêm</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>NGUYỄN VĂN LIÊM</h1>
-        <p>Software Engineering Student | Java & Android Developer</p>
-    </header>
+    <div class="main-wrapper">
+        <aside class="sidebar">
+            <div class="profile-card">
+                <div class="avatar">
+                    <i class="fa-solid fa-user-gear"></i>
+                </div>
+                <h1>Liêm</h1>
+                <p class="tagline">Software Engineering Student | Java & Android Developer</p>
+                <p class="bio">Focused on building reliable mobile applications and smart tracking systems.</p>
+                
+                <div class="contact-links">
+                    <div class="link-item"><i class="fa-solid fa-location-dot"></i> Hồ Chí Minh, Việt Nam</div>
+                    <div class="link-item"><i class="fa-solid fa-envelope"></i> email@example.com</div>
+                    <div class="link-item"><i class="fa-solid fa-file-pdf"></i> Resume</div>
+                    <div class="link-item"><i class="fa-brands fa-github"></i> <a href="#">GitHub</a></div>
+                </div>
+            </div>
+        </aside>
 
-    <section>
-        <h2>Kỹ năng</h2>
-        <ul>
-            <li>Lập trình: Java, JavaScript, Python</li>
-            <li>Công cụ: Figma, Android Studio</li>
-            <li>Ngoại ngữ: Tiếng Nhật (N4)</li>
-        </ul>
-    </section>
+        <main class="content">
+            <h2 class="section-title">Recent projects</h2>
+            
+            <article class="post-card">
+                <div class="post-meta">Less than 1 minute read</div>
+                <h3><a href="#">Smart School Bus Tracking - SSB 1.0</a></h3>
+                <p>Hệ thống quản lý và theo dõi xe buýt thông minh, tích hợp định vị và quản lý lộ trình cho học sinh.</p>
+                <div class="tech-stack">
+                    <span>#Java</span> <span>#Android</span> <span>#SoftwareEngineering</span>
+                </div>
+            </article>
 
-    <section>
-        <h2>Dự án tiêu biểu</h2>
-        <div>
-            <h3>Smart School Bus Tracking (SSB 1.0)</h3>
-            <p>Hệ thống theo dõi xe bus trường học thông minh.</p>
-        </div>
-    </section>
+            <article class="post-card">
+                <div class="post-meta">Less than 1 minute read</div>
+                <h3><a href="#">Student Database Management</a></h3>
+                <p>Ứng dụng quản lý sinh viên với đầy đủ chức năng CRUD (Thêm, Sửa, Xóa, Tìm kiếm) trên nền tảng Java.</p>
+                <div class="tech-stack">
+                    <span>#Java</span> <span>#CRUD</span> <span>#Database</span>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <div class="post-meta">Ngoại ngữ & Kỹ năng khác</div>
+                <h3>Chứng chỉ tiếng Nhật N4 (JLPT)</h3>
+                <p>Đã đạt trình độ N4. Có khả năng đọc hiểu và giao tiếp cơ bản trong môi trường làm việc.</p>
+                <div class="tech-stack">
+                    <span>#Japanese</span> <span>#N4</span>
+                </div>
+            </article>
+        </main>
+    </div>
 </body>
 </html>
