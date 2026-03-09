@@ -1,35 +1,40 @@
+/* 1. Cấu hình màu sắc và Font chữ */
 :root {
-    --primary-color: #2563eb;
-    --text-main: #1e293b;
-    --text-muted: #64748b;
     --bg-color: #f8fafc;
     --sidebar-bg: #ffffff;
+    --primary-color: #2563eb; /* Màu xanh cho tiêu đề dự án */
+    --text-main: #1e293b;    /* Màu chữ chính (Đen xám) */
+    --text-muted: #64748b;   /* Màu chữ phụ (Xám) */
+    --border-color: #e2e8f0;
 }
 
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-main);
     margin: 0;
+    padding: 0;
     line-height: 1.6;
 }
 
-/* Chia bố cục 2 cột chính */
+/* 2. Bố cục chính chia 2 cột */
 .main-wrapper {
-    display: flex;
+    display: flex; /* Kích hoạt chia cột */
     max-width: 1200px;
     margin: 0 auto;
     min-height: 100vh;
 }
 
-/* Sidebar bên trái (320px) */
+/* 3. Cột bên trái (Sidebar) */
 .sidebar {
     width: 320px;
     background-color: var(--sidebar-bg);
     padding: 60px 40px;
-    border-right: 1px solid #e2e8f0;
+    border-right: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     height: 100vh;
@@ -48,28 +53,56 @@ body {
     margin-bottom: 25px;
 }
 
-h1 { font-size: 1.5rem; margin: 0; font-weight: 700; }
-.tagline { font-weight: 600; color: #475569; margin: 10px 0; font-size: 0.95rem; }
-.bio { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 40px; }
+.sidebar h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 700;
+}
 
-/* Định dạng các đường link có thể nhấn được */
-.contact-links { font-size: 0.9rem; }
-.link-item { margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-.link-item i { color: var(--text-main); width: 20px; }
+.tagline {
+    font-weight: 600;
+    color: #475569;
+    margin: 10px 0;
+    font-size: 0.9rem;
+}
 
+.bio {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+/* 4. Định dạng các dòng thông tin (Dạng chữ thuần) */
+.contact-links {
+    font-size: 0.9rem;
+    color: var(--text-main); /* Đảm bảo chữ hiện màu đen xám, không phải xanh link */
+}
+
+.link-item {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.link-item i {
+    color: var(--text-main);
+    width: 20px;
+    font-size: 1rem;
+}
+
+/* Nếu bạn vẫn dùng thẻ <a> cho GitHub/Resume thì định dạng ở đây */
 .link-item a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.2s;
+    color: inherit; /* Lấy màu từ cha (màu đen xám) */
+    text-decoration: none; /* Bỏ gạch chân */
 }
 
 .link-item a:hover {
+    color: var(--primary-color);
     text-decoration: underline;
-    color: #1d4ed8;
 }
 
-/* Cột nội dung bên phải */
+/* 5. Cột nội dung bên phải */
 .content {
     flex: 1;
     padding: 60px 60px;
@@ -84,8 +117,15 @@ h1 { font-size: 1.5rem; margin: 0; font-weight: 700; }
     font-weight: 600;
 }
 
-.post-card { margin-bottom: 60px; }
-.post-meta { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px; }
+.post-card {
+    margin-bottom: 60px;
+}
+
+.post-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
 
 .post-card h3 a {
     font-size: 1.6rem;
@@ -94,9 +134,16 @@ h1 { font-size: 1.5rem; margin: 0; font-weight: 700; }
     font-weight: 700;
 }
 
-.post-card h3 a:hover { text-decoration: underline; }
+.post-card h3 a:hover {
+    text-decoration: underline;
+}
 
-.tech-stack { display: flex; gap: 10px; margin-top: 15px; }
+.tech-stack {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
 .tech-stack span {
     font-size: 0.75rem;
     background: #f1f5f9;
@@ -106,9 +153,20 @@ h1 { font-size: 1.5rem; margin: 0; font-weight: 700; }
     color: #475569;
 }
 
-/* Responsive cho thiết bị di động */
+/* 6. Tối ưu cho di động */
 @media (max-width: 850px) {
-    .main-wrapper { flex-direction: column; }
-    .sidebar { width: 100%; height: auto; position: static; padding: 40px 20px; border-right: none; border-bottom: 1px solid #e2e8f0; }
-    .content { padding: 40px 20px; }
+    .main-wrapper {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 40px 20px;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .content {
+        padding: 40px 20px;
+    }
 }
